@@ -1,0 +1,274 @@
+/*
+NOTES:
+backgroundColors:
+1st section: rgb(208 219 226)
+2nd section: #fff
+3rd section: rgb(243 246 248)
+footer: rgb(2 74 95)
+*/
+
+/*houses the two grid set up & acts as background for colors*/
+.parent-container {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #d0dbe2 50%, #fff 50%) !important;
+}
+
+/*main grid element for image block, form & features section*/
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3rem 2fr 2fr 3rem;
+  grid-template-rows: 3rem 2fr 2fr 3rem;
+  gap: 30px 30px;
+  grid-auto-flow: row;
+  justify-items: start;
+}
+
+/* Section 1 - Part of Grid Template  */
+.section-1 {
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+/* Image Container - Part of Grid Template */
+.image-container {
+  grid-area: 2 / 2 / 4 / 3;
+  justify-self: flex-end;
+}
+
+/* Floating Image - Minize for DESKTOP to 80%. Should be 100% for mobile */
+.floating-image {
+  width: 80%;
+}
+
+/* Form Content Styling */
+.form-content {
+  max-width: 450px;
+}
+.form-content h2 {
+  font-weight: 800;
+  font-size: 40px;
+}
+
+.form-content h2,
+p {
+  color: #024a5f;
+}
+
+input {
+  border: 1px solid rgb(131 163 175) !important;
+  color: #024a5f;
+}
+
+::placeholder {
+  color: #ff3131;
+  opacity: 1;
+}
+
+/* Section 2 - White Background */
+.section-2 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+/* Form Button Styling */
+.custom-button {
+  background-color: #e82500;
+  font-weight: 600;
+  border: none;
+  width: 100%;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  line-height: 1em;
+  font-size: 1.4rem;
+}
+
+.form-caption {
+  font-size: 12px;
+}
+
+.form-caption a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 10px;
+}
+
+.feature-icon {
+  background-color: #e82500;
+  border-radius: 50%;
+  min-width: 25px;
+  min-height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  color: white;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.report-text,
+.bold-text {
+  color: #397182;
+  font-weight: bold;
+}
+
+li {
+  margin: 1rem auto;
+}
+
+.feature-text {
+  color: #397182;
+}
+
+.content-area {
+  max-width: 600px !important;
+}
+
+/**/
+.section-3 {
+  background-color: #f3f6f8;
+  padding: 3rem;
+}
+
+.third-area {
+  width: 40vw !important;
+}
+.third-area p {
+  color: rgb(2 74 95);
+  font-size: 14px;
+}
+
+.text-image-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-image-row img {
+  width: 200px;
+}
+
+.footer {
+  background-color: rgb(2 74 95);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.footer-content {
+  width: 40vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.left-about h2,
+.about-content,
+.legal-info,
+.legal-links,
+.legal-links a {
+  color: #dce5eb;
+}
+
+.left-about h2 {
+  font-size: 25px;
+  line-height: 0.5rem;
+}
+
+.about-content {
+  font-size: 14px;
+}
+
+.legal-info,
+.legal-links,
+.legal-links a {
+  font-size: 11px;
+}
+
+.right-logo img {
+  width: 200px;
+}
+
+.legal {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+/*handle tablet breakpoints*/
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr; /* One column layout */
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .section-1,
+  .image-container,
+  .section-2 {
+    grid-area: auto; /* Let them flow naturally */
+  }
+}
+
+/*handle mobile breakpoints*/
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* One column layout */
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .section-1,
+  .image-container,
+  .section-2 {
+    grid-area: auto; /* Let them flow naturally */
+  }
+
+  .section-2 {
+    order: 2;
+  }
+  .image-container {
+    order: 1;
+  }
+
+  .floating-image {
+    width: 80%;
+  }
+
+  .third-area {
+    width: 100% !important;
+  }
+
+  .text-image-row img {
+    display: none;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .left-about h2 {
+    font-size: 20px;
+  }
+
+  .legal {
+    flex-direction: column;
+  }
+}
