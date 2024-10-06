@@ -28,6 +28,7 @@ footer: rgb(2 74 95)
 /* Section 1 - Part of Grid Template  */
 .section-1 {
   grid-area: 2 / 3 / 3 / 4;
+  align-self: end;
 }
 
 /* Image Container - Part of Grid Template */
@@ -38,7 +39,7 @@ footer: rgb(2 74 95)
 
 /* Floating Image - Minize for DESKTOP to 80%. Should be 100% for mobile */
 .floating-image {
-  width: 80%;
+  width: 90%;
 }
 
 /* Form Content Styling */
@@ -60,7 +61,7 @@ input {
   color: #024a5f;
 }
 
-::placeholder {
+input::placeholder {
   color: #ff3131;
   opacity: 1;
 }
@@ -101,14 +102,13 @@ input {
 }
 
 .feature-icon {
-  background-color: #e82500;
   border-radius: 50%;
   min-width: 25px;
   min-height: 25px;
   display: flex;
   justify-content: center;
-  align-items: start;
-  color: white;
+  align-items: center;
+  color: #e82500;
   font-weight: 800;
   font-size: 15px;
 }
@@ -170,7 +170,7 @@ li {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  gap: 5.5rem;
 }
 
 .left-about h2,
@@ -187,17 +187,18 @@ li {
 }
 
 .about-content {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .legal-info,
 .legal-links,
 .legal-links a {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .right-logo img {
   width: 200px;
+  height: auto;
 }
 
 .legal {
@@ -208,24 +209,11 @@ li {
   gap: 5px;
 }
 
-/*handle tablet breakpoints*/
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr; /* One column layout */
-    grid-template-rows: auto;
-    gap: 20px;
-    align-items: center;
-  }
-
-  .section-1,
-  .image-container,
-  .section-2 {
-    grid-area: auto; /* Let them flow naturally */
-  }
+@media (max-width: 1640px) {
 }
 
 /*handle mobile breakpoints*/
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr; /* One column layout */
     grid-template-rows: auto;
@@ -237,13 +225,24 @@ li {
   .image-container,
   .section-2 {
     grid-area: auto; /* Let them flow naturally */
+    margin: 0 auto;
   }
 
-  .section-2 {
-    order: 2;
+  .form-content {
+    margin: 1rem auto;
+    padding: 1rem;
   }
+
   .image-container {
     order: 1;
+  }
+  .section-2 {
+    order: 2;
+    padding: 1rem;
+  }
+
+  .section-3 {
+    padding: 1.3rem;
   }
 
   .floating-image {

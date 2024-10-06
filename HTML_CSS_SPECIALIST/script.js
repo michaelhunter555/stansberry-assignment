@@ -2,7 +2,12 @@
 const validateEmail = (email) => {
   return /^\S+@\S+\.\S+$/.test(email);
 };
-//form submission
+
+/**
+ * @name - handleFormSubmit
+ * @param {*} event
+ * @description - handles form event with e-mail validation and redirect to thankyou.html
+ */
 const handleFormSubmit = (event) => {
   event.preventDefault();
   //retrieve e-mail input
