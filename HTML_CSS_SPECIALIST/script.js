@@ -21,6 +21,10 @@ const handleFormSubmit = (event) => {
     event.target.reset();
   } else {
     //alert user their e-mail is invalid
-    alert("Your email is not valid. Please enter a valid email format.");
+    alert(
+      `${String.fromCodePoint(
+        0x1fae3
+      )} Your email is not valid. Please enter a valid email format.`
+    );
   }
 };

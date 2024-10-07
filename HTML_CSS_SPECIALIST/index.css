@@ -7,6 +7,10 @@ backgroundColors:
 footer: rgb(2 74 95)
 */
 
+p {
+  margin: 0;
+}
+
 /*houses the two grid set up & acts as background for colors*/
 .parent-container {
   margin: 0;
@@ -28,16 +32,17 @@ footer: rgb(2 74 95)
 /* Section 1 - Part of Grid Template  */
 .section-1 {
   grid-area: 2 / 3 / 3 / 4;
-  align-self: end;
+  align-self: center;
 }
 
 /* Image Container - Part of Grid Template */
 .image-container {
   grid-area: 2 / 2 / 4 / 3;
   justify-self: flex-end;
+  align-self: center;
 }
 
-/* Floating Image - Minize for DESKTOP to 80%. Should be 100% for mobile */
+/* Floating Image */
 .floating-image {
   width: 90%;
 }
@@ -98,7 +103,7 @@ input::placeholder {
   display: flex;
   flex-direction: row;
   align-items: start;
-  gap: 10px;
+  gap: 5px;
 }
 
 .feature-icon {
@@ -110,7 +115,7 @@ input::placeholder {
   align-items: center;
   color: #e82500;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .report-text,
@@ -123,7 +128,7 @@ li {
   margin: 1rem auto;
 }
 
-.feature-text {
+.feature-text p {
   color: #397182;
 }
 
@@ -134,11 +139,12 @@ li {
 /**/
 .section-3 {
   background-color: #f3f6f8;
-  padding: 3rem;
+  padding: 2rem;
 }
 
 .third-area {
   width: 40vw !important;
+  line-height: 1.8rem;
 }
 .third-area p {
   color: rgb(2 74 95);
@@ -154,7 +160,7 @@ li {
   width: 200px;
 }
 
-.footer {
+footer {
   background-color: rgb(2 74 95);
   width: 100%;
   display: flex;
@@ -175,15 +181,18 @@ li {
 
 .left-about h2,
 .about-content,
-.legal-info,
+.legal-info p,
 .legal-links,
 .legal-links a {
   color: #dce5eb;
 }
 
+.legal-info p {
+  margin: 0;
+}
+
 .left-about h2 {
   font-size: 25px;
-  line-height: 0.5rem;
 }
 
 .about-content {
@@ -193,7 +202,7 @@ li {
 .legal-info,
 .legal-links,
 .legal-links a {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .right-logo img {
@@ -209,11 +218,75 @@ li {
   gap: 5px;
 }
 
-@media (max-width: 1640px) {
+.legal-links a {
+  text-decoration: none;
 }
 
-/*handle mobile breakpoints*/
-@media (max-width: 500px) {
+/*for tablet breakpoints*/
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr; /* One column layout */
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .section-1,
+  .image-container,
+  .section-2 {
+    grid-area: auto; /* Let them flow naturally */
+    margin: 0 auto;
+  }
+  .form-content {
+    margin: 1rem auto;
+  }
+
+  .image-container {
+    order: 1;
+  }
+  .section-2 {
+    order: 2;
+    padding: 1rem;
+  }
+
+  .third-area {
+    width: 70vw !important;
+  }
+  .floating-image {
+    width: 80%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    width: 70vw;
+    gap: 3rem;
+  }
+  .legal {
+    margin-bottom: 10rem;
+  }
+
+  footer {
+    margin-bottom: 20rem;
+  }
+}
+
+/*for possible unusual device sizes (more obscure options from toggle device toolbar)*/
+@media (max-width: 821px) {
+  footer {
+    margin-bottom: 10rem;
+  }
+  .legal {
+    margin-bottom: 10rem;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 3rem;
+    width: 70vw;
+  }
+}
+
+/*for mobile breakpoints 768px and below*/
+@media (max-width: 767px) {
   .grid {
     grid-template-columns: 1fr; /* One column layout */
     grid-template-rows: auto;
@@ -269,5 +342,19 @@ li {
 
   .legal {
     flex-direction: column;
+    margin-bottom: 3rem;
+  }
+  footer {
+    margin-bottom: 0rem;
+  }
+}
+
+/*for mobile breakpoints 410px and below*/
+@media (max-width: 410px) {
+  .legal {
+    margin-bottom: 0;
+  }
+  footer {
+    margin-bottom: 0rem;
   }
 }
