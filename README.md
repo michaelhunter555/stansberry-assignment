@@ -1,4 +1,4 @@
-Take home assignment given to my Stansberry Research.
+Take home assignment given to me by Stansberry Research.
 
 In the end they ghosted 👻👻👻 me after promising to give me feedback after submission.
 
